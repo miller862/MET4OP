@@ -92,7 +92,7 @@ if not shoot.empty:
 
 #%%
 # Verificación de Normalidad para TAs
-variable_a_testear = "Edad"
+variable_a_testear = "TAs"
 
 if variable_a_testear in EJ.columns:
     print(f"--- Verificando normalidad para '{variable_a_testear}' ---")
@@ -139,7 +139,7 @@ if variable_dependiente in EJ.columns:
     # 'two-sided': para H1 de diferencia (≠)
     # 'less': para H1 de "menor que" (<)
     # 'greater': para H1 de "mayor que" (>)
-    t_stat, p_valor = stats.ttest_1samp(datos, popmean=valor_hipotetico, alternative="greater")
+    t_stat, p_valor = stats.ttest_1samp(datos, popmean=valor_hipotetico, alternative="less")
 
     print(f"\nResultados: t-statistic={t_stat:.4f}, p-valor={p_valor:.6f}")
     if p_valor < 0.05:
